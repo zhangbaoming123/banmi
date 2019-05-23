@@ -39,4 +39,13 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':mylibrary')
+    implementation files('lib/open_sdk_r5990_lite.jar')
+    implementation files('lib/umeng-share-wechat-full-6.9.2.jar')
+    implementation files('lib/umeng-share-sina-simplify-6.9.2.jar')
+    implementation files('lib/umeng-sharetool-6.9.2.jar')
+    implementation files('lib/umeng-share-QQ-full-6.9.2.jar')
+    implementation files('lib/umeng-shareboard-widget-6.9.2.jar')
+    implementation files('lib/umeng-share-core-6.9.2.jar')
+    implementation files('lib/umeng-common-1.5.3.jar')
+    implementation files('lib/wechat-sdk-android-without-mta-5.1.4.jar')
 }
