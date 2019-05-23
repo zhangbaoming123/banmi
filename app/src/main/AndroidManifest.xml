@@ -27,7 +27,6 @@
         <activity android:name=".activity.WelcomeActivity" />
         <activity android:name=".activity.NotivityActivity" />
         <activity android:name=".activity.MessageActivity"></activity>
-        <activity android:name=".activity.WelcomeActivity" />
         <activity android:name=".activity.PhoneActivity" />
         <activity android:name=".activity.ShuruActivity"></activity>
     </application>
