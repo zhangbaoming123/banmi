@@ -53,4 +53,5 @@ dependencies {
     implementation files('lib/umeng-share-core-6.9.2.jar')
     implementation files('lib/umeng-common-1.5.3.jar')
     implementation files('lib/wechat-sdk-android-without-mta-5.1.4.jar')
+    implementation 'com.jacktuotuo.customview:verificationcodeview:1.0.4'
 }
