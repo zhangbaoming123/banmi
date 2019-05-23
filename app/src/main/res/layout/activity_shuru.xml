@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".activity.ShuruActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_35"
+        android:src="@drawable/back_white"/>
+
+    <TextView
+        android:id="@+id/tv_send"
+        android:layout_marginTop="@dimen/dp_37"
+        android:layout_marginLeft="@dimen/dp_252"
+        android:layout_width="@dimen/dp_108"
+        android:layout_height="@dimen/dp_20"
+        android:text="重新发送（56s）"
+        android:textColor="#FF999999"
+        android:textSize="@dimen/sp_14"
+        />
+
+    <TextView
+        android:layout_width="@dimen/dp_170"
+        android:layout_height="@dimen/dp_38"
+        android:text="请输入验证码"
+        android:layout_marginLeft="@dimen/dp_23"
+        android:layout_marginTop="@dimen/dp_104"
+        android:textColor="#FF373737"
+        android:textSize="@dimen/dp_27"
+        />
+
+    <com.tuo.customview.VerificationCodeView
+        android:id="@+id/icv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_56"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_225"
+        app:icv_et_bg_focus="@drawable/yan_shape"
+        app:icv_et_bg_normal="@drawable/shape_icv_et_bg_normal"
+        app:icv_et_divider_drawable="@drawable/shape_divider_identifying"
+        app:icv_et_number="4"
+        app:icv_et_pwd="false"
+        app:icv_et_pwd_radius="10dp"
+        app:icv_et_text_color="#000000"
+        app:icv_et_width="@dimen/dp_50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.tuo.customview.VerificationCodeView>
+</RelativeLayout>
