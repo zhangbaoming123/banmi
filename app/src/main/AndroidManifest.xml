@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lenovo.banmi">
 
     <application
@@ -11,6 +12,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".mycoupon.activity.MyCouponActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +21,12 @@
         </activity>
         <activity android:name=".mycoupon.activity.ViewPingActivity" />
         <activity android:name=".mycoupon.activity.KefuActivity"></activity>
+        <activity android:name=".MainActivity"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.WelcomeActivity" />
+        <activity android:name=".activity.PhoneActivity" />
+        <activity android:name=".activity.ShuruActivity"></activity>
     </application>
 
 </manifest>

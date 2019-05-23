@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/guide_03"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/viewpager_btn"
+        android:layout_width="@dimen/dp_177"
+        android:layout_height="@dimen/dp_40"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/sp_16"
+        android:text="立即体验"
+        android:background="@drawable/button_highlight"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/dp_43"
+        />
+
+</RelativeLayout>
