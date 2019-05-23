@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:title="通知" android:id="@+id/op1" android:icon="@mipmap/ling" app:showAsAction="always">/</item>
+<item android:title="消息" android:id="@+id/op2" android:icon="@mipmap/message" app:showAsAction="always">/</item>
 </menu>
