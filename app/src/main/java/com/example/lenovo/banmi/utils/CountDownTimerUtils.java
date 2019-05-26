@@ -16,12 +16,6 @@ public class CountDownTimerUtils extends CountDownTimer {
     public void onTick(long millisUntilFinished) {
         textView.setClickable(false);//设置不可点击
         textView.setText(millisUntilFinished / 1000 + "秒后可重新发送");//设置倒计时时间
-        /* SpannableString spannableString=new SpannableString(bt_getcord.getText().toString());//获取按钮上的文字
-        ForegroundColorSpan span=new ForegroundColorSpan(Color.RED);//设置文字颜色
-        bt_getcord.setAllCaps(false);
-        spannableString.setSpan(span,0,2,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);////将倒计时的时间设置为红色
-        bt_getcord.setText(spannableString);*/
-
     }
 
     @Override

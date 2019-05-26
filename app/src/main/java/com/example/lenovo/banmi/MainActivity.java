@@ -1,11 +1,14 @@
 package com.example.lenovo.banmi;
 
 import android.content.Intent;
+import android.media.VolumeShaper;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,16 +16,26 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.lenovo.banmi.activity.MessageActivity;
 import com.example.lenovo.banmi.activity.NotivityActivity;
 import com.example.lenovo.banmi.adapter.MainVpAdapter;
 import com.example.lenovo.banmi.base.BaseActivity;
 import com.example.lenovo.banmi.presenter.EmptyP;
+import com.example.lenovo.banmi.utils.SpUtil;
 import com.example.lenovo.banmi.view.EmptyV;
 import com.example.lenovo.banmi.weight.CustomDrawerLayout;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,6 +60,8 @@ public class MainActivity extends BaseActivity<EmptyV, EmptyP> implements View.O
     @BindView(R.id.rg)
     RadioGroup rg;
     private ArrayList<Fragment> fragments;
+    private String img;
+    private String name;
 
     @Override
     protected EmptyP initPresenter() {
@@ -59,9 +74,25 @@ public class MainActivity extends BaseActivity<EmptyV, EmptyP> implements View.O
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
     protected void initView() {
-        btn1.setChecked(true);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        img = intent.getStringExtra("img");
+        name = intent.getStringExtra("name");
+
+        View headerView = mainNav.getHeaderView(0);
+        TextView tv_name = headerView.findViewById(R.id.header_name);
+        ImageView iv = headerView.findViewById(R.id.header_iv);
+        tv_name.setText(name);
+        RequestOptions options = new RequestOptions().circleCrop();
+        Glide.with(MainActivity.this).load(img).apply(options).into(iv);
+
         mainTool.setTitle("");
         setSupportActionBar(mainTool);
         //解决侧滑菜单menu部分图标不显示
