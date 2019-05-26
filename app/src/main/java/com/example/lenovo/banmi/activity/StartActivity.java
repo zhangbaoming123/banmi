@@ -1,16 +1,11 @@
-package com.example.lenovo.banmi;
+package com.example.lenovo.banmi.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 
-import com.example.lenovo.banmi.activity.LoginActivity;
-import com.example.lenovo.banmi.activity.WelcomeActivity;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.example.lenovo.banmi.R;
 
 public class StartActivity extends AppCompatActivity {
 

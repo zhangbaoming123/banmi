@@ -9,9 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.lenovo.banmi.MainActivity;
 import com.example.lenovo.banmi.R;
-import com.example.lenovo.banmi.ViewpagerAdapter;
+import com.example.lenovo.banmi.adapter.ViewpagerAdapter;
 
 import java.util.ArrayList;
 

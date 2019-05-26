@@ -23,4 +23,7 @@ public class MyApp extends Application {
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
 
     }
+    public static MyApp getInstance(){
+        return app;
+    }
 }

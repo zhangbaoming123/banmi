@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lenovo.banmi">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"
@@ -13,7 +19,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".mycoupon.activity.MyCouponActivity"/>
-        <activity android:name=".StartActivity">
+        <activity android:name=".activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +33,10 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.WelcomeActivity" />
         <activity android:name=".activity.NotivityActivity" />
-        <activity android:name=".activity.MessageActivity"></activity>
+        <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.PhoneActivity" />
-        <activity android:name=".activity.ShuruActivity"></activity>
+        <activity android:name=".activity.ShuruActivity" />
+        <activity android:name=".activity.MainInfoActivity"></activity>
 
        <!-- 微信
         <activity
