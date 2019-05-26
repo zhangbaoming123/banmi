@@ -30,6 +30,10 @@
         <activity android:name=".mycoupon.activity.KefuActivity"></activity>
         <activity android:name=".MainActivity"
             tools:ignore="DuplicateActivity" />
+        //解析适配9.0系统
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.WelcomeActivity" />
         <activity android:name=".activity.NotivityActivity" />

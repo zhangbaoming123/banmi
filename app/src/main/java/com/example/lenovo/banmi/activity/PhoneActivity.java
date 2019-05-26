@@ -46,10 +46,10 @@ public class PhoneActivity extends AppCompatActivity {
     public void onViewClicked() {
         String s = etPhone.getText().toString();
 
-        if (s.matches("[1-9]{11}")) {
+        if (s.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$")) {
             finish();
         } else {
-            Toast.makeText(PhoneActivity.this, "重新输入", Toast.LENGTH_LONG).show();
+            Toast.makeText(PhoneActivity.this, "手机号错误，请重新输入", Toast.LENGTH_LONG).show();
         }
     }
 }

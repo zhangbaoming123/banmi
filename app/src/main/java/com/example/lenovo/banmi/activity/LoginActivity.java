@@ -106,8 +106,13 @@ public class LoginActivity extends AppCompatActivity {
         btnSendVerif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,ShuruActivity.class);
-                startActivity(intent);
+                String s = etPhone.getText().toString();
+
+                if (s.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$")) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                } else {
+                    Toast.makeText(LoginActivity.this, "手机号错误，请重新输入", Toast.LENGTH_LONG).show();
+                }
             }
         });
        /* if (!TextUtils.isEmpty(etPhone.getText().toString())){
