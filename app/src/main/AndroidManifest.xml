@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".mycoupon.activity.ViewPingActivity" />
         <activity android:name=".mycoupon.activity.KefuActivity" />
-        <!--
+
             <activity android:name=".MainActivity"
             tools:ignore="DuplicateActivity" />
         //解析适配9.0系统
@@ -42,8 +42,9 @@
         <activity android:name=".activity.PhoneActivity" />
         <activity android:name=".activity.ShuruActivity" />
         <activity android:name=".activity.MainInfoActivity"></activity>
+        <activity android:name=".mywallet.activity.MyWalletActivity"></activity>
 
-       <!-- 微信
+        <!-- 微信
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="ke yboardHidden|orientation|screenSize"

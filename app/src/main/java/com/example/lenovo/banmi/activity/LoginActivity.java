@@ -95,12 +95,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("name",screenname);
-                intent.putExtra("img",iconurl);
+                intent.putExtra("name", screenname);
+                intent.putExtra("img", iconurl);
                 startActivity(intent);
                 Toast.makeText(LoginActivity.this, "成功了", Toast.LENGTH_LONG).show();
             }
         }
+
         /**
          * @desc 授权失败的回调
          * @param platform 平台名称
@@ -109,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
          */
         @Override
         public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            Toast.makeText(LoginActivity.this, "失败：" + t.getMessage(),                                     Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "失败：" + t.getMessage(), Toast.LENGTH_LONG).show();
         }
 
         /**
@@ -135,56 +136,56 @@ public class LoginActivity extends AppCompatActivity {
         btnSendVerif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String s = etPhone.getText().toString();
-                    if (s.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$")) {
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "手机号错误，请重新输入", Toast.LENGTH_LONG).show();
-                    }
+                String s = etPhone.getText().toString();
+                if (s.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$")) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(LoginActivity.this, "手机号错误，请重新输入", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         SharedPreferences sp = getSharedPreferences("user1", MODE_PRIVATE);
         boolean bl = sp.getBoolean("bll", false);
         if (bl) {
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }
-       /* if (!TextUtils.isEmpty(etPhone.getText().toString())){
+        if (!TextUtils.isEmpty(etPhone.getText().toString())) {
             btnSendVerif.setBackgroundResource(R.drawable.button_no);
-        }else{
+        } else {
             btnSendVerif.setBackgroundResource(R.drawable.button_yes);
         }
-
     }
 
-    @OnClick({R.id.btn_send_verif, R.id.um_wechat, R.id.um_qq, R.id.um_weibo, R.id.tv_name})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.btn_send_verif:
-                break;
-            case R.id.um_wechat:
-                Intent intent = new Intent(LoginActivity.this,PhoneActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.um_qq:
-                SharedPreferences sp = getSharedPreferences("user1", MODE_PRIVATE);
-                SharedPreferences.Editor edit = sp.edit();
-                edit.putBoolean("bll", true);
-                edit.commit();
-                UMShareAPI umShareAPI = UMShareAPI.get(this);
-                umShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
-                break;
-            case R.id.um_weibo:
-                break;
-            case R.id.tv_name:
-                break;
+        @OnClick({R.id.btn_send_verif, R.id.um_wechat, R.id.um_qq, R.id.um_weibo, R.id.tv_name})
+        public void onViewClicked (View view){
+            switch (view.getId()) {
+                case R.id.btn_send_verif:
+                    break;
+                case R.id.um_wechat:
+                    Intent intent = new Intent(LoginActivity.this, PhoneActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.um_qq:
+                    SharedPreferences sp = getSharedPreferences("user1", MODE_PRIVATE);
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("bll", true);
+                    edit.commit();
+                    UMShareAPI umShareAPI = UMShareAPI.get(this);
+                    umShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
+                    break;
+                case R.id.um_weibo:
+                    break;
+                case R.id.tv_name:
+                    break;
+            }
+        }
+        @Override
+        protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+            super.onActivityResult(requestCode, resultCode, data);
+            UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
         }
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-    }
-}
+
