@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.lenovo.banmi.MainActivity;
+import com.example.lenovo.banmi.MainActivity;
 import com.example.lenovo.banmi.R;
 import com.example.lenovo.banmi.base.Constants;
 import com.example.lenovo.banmi.utils.SpUtil;
@@ -154,7 +155,8 @@ public class LoginActivity extends AppCompatActivity {
             btnSendVerif.setBackgroundResource(R.drawable.button_no);
         }else{
             btnSendVerif.setBackgroundResource(R.drawable.button_yes);
-        }*/
+        }
+
     }
 
     @OnClick({R.id.btn_send_verif, R.id.um_wechat, R.id.um_qq, R.id.um_weibo, R.id.tv_name})

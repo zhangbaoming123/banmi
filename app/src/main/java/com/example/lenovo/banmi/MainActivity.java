@@ -3,6 +3,7 @@ package com.example.lenovo.banmi;
 import android.content.Intent;
 import android.media.VolumeShaper;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -24,6 +25,8 @@ import com.example.lenovo.banmi.activity.MessageActivity;
 import com.example.lenovo.banmi.activity.NotivityActivity;
 import com.example.lenovo.banmi.adapter.MainVpAdapter;
 import com.example.lenovo.banmi.base.BaseActivity;
+import com.example.lenovo.banmi.mycoupon.activity.MyCouponActivity;
+import com.example.lenovo.banmi.mywallet.activity.MyWalletActivity;
 import com.example.lenovo.banmi.presenter.EmptyP;
 import com.example.lenovo.banmi.utils.SpUtil;
 import com.example.lenovo.banmi.view.EmptyV;
@@ -104,6 +107,7 @@ public class MainActivity extends BaseActivity<EmptyV, EmptyP> implements View.O
 
     @Override
     protected void initData() {
+        View headerView = mainNav.getHeaderView(0);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -118,6 +122,7 @@ public class MainActivity extends BaseActivity<EmptyV, EmptyP> implements View.O
             }
         });
     }
+
 
     private void initFragment() {
         fragments = new ArrayList<>();
@@ -142,7 +147,7 @@ public class MainActivity extends BaseActivity<EmptyV, EmptyP> implements View.O
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.op1://通知
-                startActivity(new Intent(MainActivity.this, NotivityActivity.class));
+                startActivity(new Intent(MainActivity.this, MyWalletActivity.class));
                 break;
             case R.id.op2://信息
                 startActivity(new Intent(MainActivity.this, MessageActivity.class));

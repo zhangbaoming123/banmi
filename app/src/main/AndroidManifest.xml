@@ -27,8 +27,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".mycoupon.activity.ViewPingActivity" />
-        <activity android:name=".mycoupon.activity.KefuActivity"></activity>
-        <activity android:name=".MainActivity"
+        <activity android:name=".mycoupon.activity.KefuActivity" />
+        <!--
+            <activity android:name=".MainActivity"
             tools:ignore="DuplicateActivity" />
         //解析适配9.0系统
         <uses-library
